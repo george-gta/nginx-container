@@ -1,0 +1,21 @@
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-java:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: build dockerfile
+      run: docker build . && docker run -d nginx -p 80
+
+    - name: curl
+      run: curl 172.17.0.1 
+
+         
