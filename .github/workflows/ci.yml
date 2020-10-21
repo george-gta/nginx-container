@@ -16,3 +16,12 @@ jobs:
       run: "docker run -it --rm -d -p 8080:80 --name web nginx"
     - name: curl
       run: "curl localhost:8080"
+    - name: ls -a via ssh
+      uses: fifsky/ssh-action@master
+      with:
+        command: |
+          cd /tmp
+          ls -a
+        host: ${{ secrets.HOST }}
+        user: root
+        key: ${{ secrets.PRIVATE_KEY}}
