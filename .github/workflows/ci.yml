@@ -15,4 +15,4 @@ jobs:
     - name: build dockerfile
       run: docker run -d nginx  
     - name: curl
-      run: curl 172.17.0.1
+      run: curl localhost
