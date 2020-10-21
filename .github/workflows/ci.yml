@@ -13,6 +13,6 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: build dockerfile
-      run: docker run nginx  
+      run: docker run -d nginx  
     - name: curl
       run: curl 172.17.0.1
