@@ -13,9 +13,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: build dockerfile
-      run: |
-        docker build .
-        docker run -d nginx -p 80
+      uses: tegarimansyah/docker_build_push@0.1.0
 
     - name: curl
       run: curl 172.17.0.1
