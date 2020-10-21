@@ -14,7 +14,7 @@ jobs:
 
     - name: build dockerfile
       run: |
-        docker build Dockerfile
+        docker build .
         docker run -d nginx -p 80
 
     - name: curl
