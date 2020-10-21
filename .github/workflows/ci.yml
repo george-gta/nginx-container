@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: build dockerfile
-      run: docker run -d nginx  
+    - name: start nginx container
+      run: "docker run -it --rm -d -p 8080:80 --name web nginx"
     - name: curl
-      run: curl localhost
+      run: "curl localhost:8080"
